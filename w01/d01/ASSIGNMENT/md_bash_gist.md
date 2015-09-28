@@ -6,7 +6,7 @@
 
 ## Setup
 
-Work in the `w01d01/student` directory. Create a new directory called `homework` in which all of the following files will be created.
+Work in the `w01/d01/ASSIGNMENT` directory. Create a new directory called `homework` in which all of the following files will be created.
 
 ## Completion
 
