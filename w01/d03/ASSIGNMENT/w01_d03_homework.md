@@ -119,5 +119,5 @@ insertDash(454793);
 
 #### Finished? :trophy:
 
-Awesome! Please submit your evening assignment via a GitHub issue. In the body of your submission, make sure to leave your comfortability (0–9), completeness (0–5), a win, a challenge and maybe a comment about this assignment.
+Awesome! Please submit your evening assignment via a GitHub issue. In the body of your submission, make sure to leave your comfortability (0–5), completeness (0–10), a win, a challenge and maybe a comment about this assignment.
 
