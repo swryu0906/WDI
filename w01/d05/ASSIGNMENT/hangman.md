@@ -3,7 +3,7 @@
 
 This weekend you will be creating the popular game of Hangman as a JavaScript console game!
 
-## Letter() 
+## Letter()
 
 Letter is a function that returns a Letter object.  
 
@@ -22,7 +22,7 @@ Letter is a function that returns a Letter object.
 
 ## Word()
 
-Word is a function that will return an object 
+Word is a function that will return an object
 
 #### Object Properties
 
@@ -51,14 +51,14 @@ Game is an object literal.
   * an array of strings
 * `words`
   * an array of strings
-* `currentWord` 
+* `currentWord`
   * starts as an empty string
 * `startGame(wordsArray)`
   * should accept an argument, an array of strings
   * should set `guesses` to ten
   * should reset the `guessedLetters` array
   * should reset the `words` array
-  * should fill the `words` array with the words from `wordsArray` 
+  * should fill the `words` array with the words from `wordsArray`
   * should select a random word from `words` and create `currentWord` `Word` object, should `getLetters` for the `currentWord
 * `guess(letter)`
   * Ask the word to `try(letter)` if `letter` hasn't been tried already. Push the `letter` tried into the array of `guessedLetters`
@@ -83,3 +83,12 @@ program should exit.
 ## Bonus
 
 * After the game is over, give the user the option to either quit or start a new game, and implement the necessary code for this feature to work
+* Implement ascii graphic which shows more of a hangman for each wrong guess [hint hint](http://eloquentjavascript.net/03_functions.html#h_c/Ms2Ed/N0) :
+```
+------|
+|      O
+|     /|\
+|     / \
+-----------
+W_DE__A_D
+```
