@@ -12,7 +12,7 @@ Letter is a function that returns a Letter object.
 * `value`
   * a string
 * `hidden`
-  * a boolean ( should be set to false by default )
+  * a boolean ( should be set to true by default )
 * `hide()`
   * a function that will set `hidden` to true
 * `show()`
