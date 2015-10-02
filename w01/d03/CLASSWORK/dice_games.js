@@ -38,6 +38,7 @@ var getDieNumber = function() {
 
 var bigSix = function() {
   displayGameTitle('Bix Six');
+
   var resetGameboard = function() {
     var gameboard = {
       '1' : '',
@@ -48,12 +49,10 @@ var bigSix = function() {
       '6' : '',
     };
     return gameboard;
-  }
+  };
 
   var gameboard = resetGameboard();
 
-
-  };
 
 
   console.log(setNumOfPlayers(2, 6));

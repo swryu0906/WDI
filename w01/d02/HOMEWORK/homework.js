@@ -4,7 +4,7 @@
 
 // 1.
 
-var seasons = ['spring', 'summer', 'fall', 'winter'];
+// var seasons = ['spring', 'summer', 'fall', 'winter'];
 
 
 
@@ -133,11 +133,71 @@ var seasons = ['spring', 'summer', 'fall', 'winter'];
 // }
 
 
+// Revised version (Using readline-sync)
+
+var lead = require('leadline-sync');
+
+var trainRoutes = {
+  'L' : [ '8th Ave',
+          '6th Ave',
+          'Union Square',
+          '3rd Ave',
+          '1st Ave',
+          'Bedford Ave' ],
+  'N' : [ 'Times Square',
+          'Herald Square',
+          '28th St',
+          '23rd St - DAPS Nexus',
+          'Union Square',
+          '8th St' ],
+  'S' : [ 'Grand Central',
+          '33rd St',
+          '28th St',
+          '23rd St',
+          'Union Square',
+          'Astor Place' ]
+};
+
+var getTrainRoutes = function(trainRoutes, trainLine) {
+  var arrayRoute = trainRoutes[trainLine];
+  var str = '';
+  for(var i = 0; i < arrayRoute; i++) {
+    str += arrayRoute[i] + '\n';
+  }
+  return str;
+}
+
+var getUserInput = function(trainRoutes) {
+  // Get the lines and store them in lines array.
+  var lines = [];
+  var strLines = ''
+  for(i in trainRoutes) lines.push(i);
+  for(i in lines) strLines += '\n(' + lines[i] + ') train';
+  //console.log(lines);
+  console.log(strLines);
+  var lead = require('leadline-sync');
+  console.log('Please, choose one of the following train list:' +
+              strLines + ' : ');
+  var userInput = lead.question();
+
+}
+
+var trainInfo = function(trainRoutes)
+{
+    getUserInput(trainRoutes);
+}
+
+
+trainInfo(trainRoutes);
+
+
+
+
 
 // 7.
 
-var nums = [14,11,16,15,13,16,15,17,19,11,12,14,19,11,15,17,11,18,12,17,12,71,18,15,12];
-nums.sort();
-var median = nums[Math.floor(nums.length / 2)];
-console.log('The median number in the array is ' + median);
-alert('The median number in the array:\n[ ' + nums + ' ]' + '\nis ' + median);
+// var nums = [14,11,16,15,13,16,15,17,19,11,12,14,19,11,15,17,11,18,12,17,12,71,18,15,12];
+// nums.sort();
+// var median = nums[Math.floor(nums.length / 2)];
+// console.log('The median number in the array is ' + median);
+// alert('The median number in the array:\n[ ' + nums + ' ]' + '\nis ' + median);
