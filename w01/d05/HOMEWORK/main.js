@@ -18,6 +18,15 @@ var displayGameTitle = function(title, hashSize) {
   console.log(result);
 }
 
+var displayHangmen = function() {
+  console.log('------|' +
+              '\n|      O' +
+              '\n|     /|\\' +
+              '\n|     / \\' +
+              '\n-----------' +
+              '\nW_DE__A_D');
+}
+
 var wordsArray = [
   'acres',
   'adult',
@@ -68,6 +77,7 @@ while(cond) {
 
 
   if(newGame.isOver()) {
+    if(newGame.overMessage() === 'You lose') displayHangmen();
     console.log('\n' + newGame.overMessage() + '\n');
 
     var isInputWrong = true;
