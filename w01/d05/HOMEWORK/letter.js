@@ -24,13 +24,3 @@ function Letter(value) {
     else return this.value;
   }
 }
-
-
-// var letterA = new Letter('A');
-// console.log(letterA.value);
-// console.log(letterA.hidden);
-// console.log(letterA.render());
-// letterA.show();
-// console.log(letterA.render());
-// letterA.hide();
-// console.log(letterA.render());

@@ -9,9 +9,7 @@ function Word() {
   // It will split the string into Letter objects
   // and push them into the letters array
   this.getLetters = function(newWord) {
-    // console.log(newWord);
     for (var i = 0; i < newWord.length; i++) {
-      // console.log(newWord.charAt(i));
       this.letters.push(new Letter(newWord.charAt(i)));
     }
 
@@ -36,13 +34,10 @@ function Word() {
       // Check if whether the input argument letter is same as
       // Letter instance's value property in the letter array
       // regardless letter case
-      // console.log(this.letters[i].value + ', ' + letter);
-      // console.log(this.letters[i].value.toUpperCase() + ', ' + letter.toUpperCase());
-      if (this.letters[i].value.toUpperCase() === letter.toUpperCase()) {
+        if (this.letters[i].value.toUpperCase() === letter.toUpperCase()) {
         this.letters[i].show();
         isMatched = true;
       }
-      // console.log(isMatched);
     }
     return isMatched;
   }
@@ -58,42 +53,3 @@ function Word() {
     return str;
   }
 }
-
-
-// var wordSample = new Word();
-// wordSample.getLetters('amd');
-// console.log('\n');
-//
-// console.log(wordSample.render());
-// console.log(wordSample.isFound());
-// console.log('\n');
-//
-// console.log(wordSample.try('s'));
-// console.log(wordSample.render());
-// console.log(wordSample.isFound());
-// console.log('\n');
-//
-// console.log(wordSample.try('M'));
-// console.log(wordSample.render());
-// console.log(wordSample.isFound());
-// console.log('\n');
-//
-// console.log(wordSample.try('f'));
-// console.log(wordSample.render());
-// console.log(wordSample.isFound());
-// console.log('\n');
-//
-// console.log(wordSample.try('a'));
-// console.log(wordSample.render());
-// console.log(wordSample.isFound());
-// console.log('\n');
-//
-// console.log(wordSample.try('e'));
-// console.log(wordSample.render());
-// console.log(wordSample.isFound());
-// console.log('\n');
-//
-// console.log(wordSample.try('D'));
-// console.log(wordSample.render());
-// console.log(wordSample.isFound());
-// console.log('\n');
