@@ -1,0 +1,149 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <a href="#">Hi</a>
+
+    <script src="main.js"></script>
+  </body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My Awesome Document</title>
+</head>
+<body>
+
+  <div id="A"></div>
+  <span id="B"></span>
+  <div id="C"></div>
+  <div id="D"></div>
+  <div id="E"></div>
+
+  <script>
+    console.log(document.getElementById('A').innerHTML = '<strong>Hi</strong>');
+    console.log(document.body.innerHTML);
+    document.getElementById('B').innerHTML = '<a href="http:://www.google.com">Google</a>';
+    document.getElementById('C').innerHTML = '<h1>This is H1</h1>';
+    document.getElementById('D').innerHTML = '<p>This is p</p>';
+    document.getElementById('E').innerHTML = '<ul><li>This is ul</li></ul>';
+  </script>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="idA">
+      <h2>Class A</h2>
+    </div>
+
+    <div id="idB">
+      <h2>Class B</h2>
+    </div>
+
+    <script>
+      var imgCow = document.createElement('img');
+      imgCow.src = 'http://i.kinja-img.com/gawker-media/image/upload/s--hTN0Pmnz--/1864zr4tzouq4jpg.jpg';
+      document.body.appendChild(imgCow);
+
+      document.body.appendChild(imgCow);
+
+      document.getElementById('idA').appendChild(imgCow);
+
+      document.getElementById('idB').appendChild(imgCow);
+
+    </script>
+  </body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+<body>
+    <div class="counter">
+      Initial counter is at 0.
+    </div>
+    <button id="btn1">Click Moo 1!</button>
+    <button id="btn2">Click Moo 2!</button>
+    <script>
+      // Cow image
+      var imgCow = document.createElement('img');
+      imgCow.src = 'http://i.kinja-img.com/gawker-media/image/upload/s--hTN0Pmnz--/1864zr4tzouq4jpg.jpg';
+      document.body.appendChild(imgCow);
+
+      // Counter
+      var currentCount = 0;
+      var updateCount = function() {
+        currentCount++;
+        var counterDisplay = document.querySelector('.counter');
+        // document.getElementByClassName('.counter').appendChild();
+        counterDisplay.innerHTML = 'Counter is now ' + currentCount + '.';
+      };
+      //updateCount();
+
+      // Sound
+      // var cowSound = document.createElement('audio');
+      // cowSound = 'moo.mp3';
+      // document.body.appendChild(cowSound);
+
+      var cowSound1 = new Audio('Cow_Mooing.mp3');
+      var cowSound2 = new Audio('Cow_Mooing2.mp3');
+      // Button
+      var cowBtn1 = document.querySelector('#btn1');
+      cowBtn1.addEventListener('click', function(eventObject) {
+        console.log(eventObject);
+        updateCount();
+        cowSound1.play();
+
+      });
+
+
+      var cowBtn2 = document.getElementById('btn2');
+      cowBtn2.addEventListener('click', function(eventObject) {
+        console.log(eventObject);
+        updateCount();
+        cowSound2.play();
+      });
+
+
+      // Guessing game
+      var guessBtn = document.createElement('button')
+      guessBtn.innerHTML = 'Try one more time!';
+      guessBtn.id = 'guessBtn';
+      guessBtn.addEventListener('click', function(eventObject) {
+        guessGame();
+      });
+
+      var guessGame = function() {
+        var userInput = parseInt(prompt('Enter a number (from 1 to 4) : '));
+        var randomNum = Math.floor(Math.random() * 4 + 1);
+        if(userInput === randomNum) alert('You win!!!!!!');
+        else {
+          alert('Woooooo, you lost!')
+          document.body.appendChild(guessBtn);
+        }
+      }
+      guessGame();
+
+    </script>
+  </body>
+</html>

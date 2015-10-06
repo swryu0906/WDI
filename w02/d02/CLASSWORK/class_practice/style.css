@@ -1,0 +1,90 @@
+/*h2 {
+  color: green;
+}
+
+#h1-id {
+  color: blue;
+}
+
+.h1-class {
+  color: red;
+}
+
+body, div {
+  color: black;
+}
+
+#main {
+
+}
+.container {
+  position: relative;
+}
+.red, .blue, .green, .yellow, .black {
+  height: 200px;
+  width: 200px;
+}
+.red {
+  background-color: red;
+  position: absolute;
+  margin-left: 50%;
+  margin-top: 50px;
+
+}
+.blue {
+  background-color: blue;
+  position: absolute;
+  left: 50%;
+  top: 100px;
+}
+.green {
+  background-color: green;
+}
+.black {
+  background-color: black;
+}
+.yellow {
+  background-color: yellow;
+}*/
+
+
+
+/*.pic-container {
+  width: 600px;
+  border: 4px solid green;
+  overflow: hidden;
+}
+
+.text {
+  border: 4px solid red;
+}
+
+#cats {
+  border: 4px dotted blue;
+  float: right;
+}*/
+
+nav {
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 20px;
+}
+
+nav ul a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav ul a:hover {
+  border-top: 1px solid green;
+  border-bottom: 1px solid green;
+  color: green;
+}
