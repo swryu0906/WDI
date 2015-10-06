@@ -28,7 +28,7 @@ body {
 }
 
 #timer {
-  display: none
+  display: none;
   border: 5px solid black;
   width: 35%;
   height: 42%;
