@@ -250,7 +250,7 @@ function itsMarvinBerry(){
   var biffTannen = document.getElementById('Biff Tannen');
   biffTannen.innerHTML = biffTannen.innerHTML.substring(0, 1) + '<span id="i">' + 'i' + '</span>' +
                           biffTannen.innerHTML.substring(2);
-  document.getElementById('i').style.color = 'black';                        
+  document.getElementById('i').style.color = 'black';
 
 
 
@@ -263,10 +263,20 @@ itsMarvinBerry()
 function outtaTime(){
   // The Clock Tower is about to get struck by lightning. Get Marty over there as quickly as possible!
 
- // Use setInteval to give the clock tower image the appearance of being in a lighting storm:
-   // setInterval will take 2 arguments. The first argument is an anonymous function that will change the opacity of the image.  The second argument is the interval of time between each invocation of the function.  For instance, window.setInterval(function(){alert('hello')}, 1000) will alert "hello" once every second(or 1000ms). Hint: One setInterval is probably not enough.
+  // Use setInteval to give the clock tower image the appearance of being in a lighting storm:
+  // setInterval will take 2 arguments. The first argument is an anonymous function that will change the opacity of the image.  The second argument is the interval of time between each invocation of the function.  For instance, window.setInterval(function(){alert('hello')}, 1000) will alert "hello" once every second(or 1000ms). Hint: One setInterval is probably not enough.
+  var marty = document.getElementById('Marty');
+  document.getElementById('Clock Tower').appendChild(marty);
+  var clockTower = document.getElementById('Clock Tower');
 
+  var lightingCond = true;
+  var lightingStrom = function() {
+    if(lightingCond) clockTower.style.opacity = 0.5;
+    else clockTower.style.opacity = 1.0;
+    lighttingCond = !lightingCond;
+  }
 
+  window.setInterval(lightingStrom, 2000);
 
   // Set the element with the id 'nineteen-eighty-five' and class `last-time-departed` to now have the class `destination-time`
 
