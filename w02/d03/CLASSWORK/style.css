@@ -8,19 +8,22 @@ h1, h3 {
 }
 
 #image-box {
-  positon: relative;
+  /*positon: relative;*/
+  overflow: hidden;
 }
 
 #image {
-  position: absolute;
+  position: relative;
   left: 50%;
   margin-left: -200px;
   width: 400px;
 }
 
 #yesnoButtons {
+  width: 244px;
   margin: 0 auto;
 }
+
 
 .hidden {
   display: none;
@@ -30,4 +33,6 @@ h1, h3 {
   width: 100px;
   height: 100px;
   background-color: gray;
+  display: inline-block;
+  margin: 10px;
 }
