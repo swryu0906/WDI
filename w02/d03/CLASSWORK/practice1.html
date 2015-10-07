@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="count">This is the count: 0</div>
+    <button id="btn1">Click here!</button>
+
+
+    <script>
+      var count = 0;
+      var updateCounter = function() {
+        count++;
+        var countDisplay = document.querySelector('.count');
+        countDisplay.innerHTML = 'This is the count: updated! to ' + count;
+      }
+
+      var onButtonPress = document.querySelector('button#btn1');
+      // onButtonPress.addEventListener('click', updateCounter);
+
+      var testFunction = function(event) {
+        console.log('Event happened! Event.type = ' + event.type);
+        console.log(event);
+        updateCounter();
+      };
+
+      onButtonPress.addEventListener('click', testFunction(event));
+      onButtonPress.addEventListener('dbclick', testFunction(event));
+
+
+
+      var counter = {
+        count: 0,
+        increment: function() {
+          this.count += 1;
+        },
+        render: function() {
+          var counter = document.querySelector('.count');
+          counter.innerHTML = 'This is the count: ' + this.count;
+        },
+        setEvents: function() {
+          // console.log('this.count = ' + this.count);
+          var currentThis = this;
+
+          var onButtonPress = document.querySelector('button#btn1');
+          onButtonPress.addEventListener('click', function(eventObject) {
+            console.log(this);
+            this.increment();
+            this.render();
+          }.bind(currentThis));
+          // });
+        }
+      };
+
+      counter.setEvents();
+
+
+
+
+      // var onButtonPress = document.querySelector('button#btn1');
+      //
+      // onButtonPress.addEventListener('clcik', function(eventObject) {
+      //     counter.increment();
+      //     counter.render();
+      // });
+      //
+      // console.log(counter);
+    </script>
+  </body>
+</html>

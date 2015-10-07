@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Class Practice</title>
+  </head>
+  <body>
+
+    <script>
+
+      // in JavaScript, module name begins with a captial letter
+      var User = (function() {
+        // private method, not available outside of User
+        var socialSecurity = function() {
+          return '111-11-111';
+        };
+
+        return {
+          // public method, available outside of User
+          display : function() {
+            console.log('Hey, Sungwon!');
+            return 'Hey, Sungwon!';
+          }
+        };
+      })();
+
+      // User.display();
+
+      var UserGroup = (function() {
+        return {
+          displayUser: function() {
+            console.log(User.display());
+            // console.log(User.socialSecurity());
+          }
+        };
+      })();
+
+      UserGroup.displayUser();
+
+
+
+    </script>
+  </body>
+</html>
