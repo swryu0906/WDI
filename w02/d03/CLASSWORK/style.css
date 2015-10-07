@@ -1,0 +1,33 @@
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+h1, h3 {
+  text-align: center;
+}
+
+#image-box {
+  positon: relative;
+}
+
+#image {
+  position: absolute;
+  left: 50%;
+  margin-left: -200px;
+  width: 400px;
+}
+
+#yesnoButtons {
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.gameButtons {
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+}
