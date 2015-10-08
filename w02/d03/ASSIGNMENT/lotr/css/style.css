@@ -14,3 +14,12 @@ button {
   display: inline;
   margin: 12px;
 }
+
+.the-white {
+  background: white;
+  text-decoration: line-through;
+}
+
+.whispered {
+  color: goldenrod;
+}

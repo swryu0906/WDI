@@ -38,18 +38,20 @@ titanic/
 # Imagine your present working directory is
 # $ ~/titanic
 # Create a file called `sos.txt` inside `titanic`.
-$
+$ touch sos.txt
+# or $ touch ~/titanic/sos.txt
 
 # Move `jack.md` from `third_class` to `first_class`.
-$
+$ mv ~/titanic/third_class/jack.md ~/titanic/first_class/
 
-# Imageine your `pwd` displayed `~/titanic/third_class`. Enter the commands to
+# Imagine your `pwd` displayed `~/titanic/third_class`. Enter the commands to
 # move up to `~/titanic` and into `second_class`.
-$
-$
+$ cd ../second_class
+# or $ cd ..
+# $ cd second_class
 
 # Remove `titanic/` and everything in it.
-$
+$ rm -rf ~/titanic
 ```
 
 
@@ -58,14 +60,14 @@ $
 
 ```sh
 # Write the commands to initialize a new git repo
-$
+$ git init
 
 # Create a new file called `readme.md`
-$
+$ touch readme.md
 
 # Add and commit the file with the message "Initial commit"
-$
-$
+$ git add .
+$ git commit -m 'Initial commit'
 
 ```
 
@@ -73,10 +75,10 @@ $
 
 ```js
 // Assign the string "Ahab" to a variable called `captain`
-//
+var captain = 'Ahab';
 
 // Use string concatenation to form the phrase "Oh Ahab, my Ahab!"
-
+var newString = 'Oh ' + captain + ', my ' + captain + '!';
 ```
 
 ```js
@@ -87,9 +89,9 @@ var c = b.toUpperCase();
 
 // What are the current values of `a`, `b`, and `c`?
 
-// currentValueOfA ==
-// currentValueOfB ==
-// currentValueOfC ==
+// currentValueOfA == 'c'
+// currentValueOfB == 'a'
+// currentValueOfC == 'A'
 ```
 
 # Conditionals
@@ -101,9 +103,10 @@ var lifeRafts = 2;
 // Write a conditional statement that console.logs "SOS!" if there are
 // more souls than life rafts.
 
-//
-//
-//
+if(souls > liftRafts) {
+   console.log('SOS!');
+}
+
 
 ```
 
@@ -113,13 +116,14 @@ var lifeRafts = 2;
 
 ```js
 // Create an array called `weekend` with just 'Friday' in it.
-
+var weekend = ['Friday'];
 // Add 'Saturday', and 'Sunday' to the array
-
+weekend.push('Saturday', 'Sunday');
 // How would you access 'Saturday'?
-
+weekend[2];
+// or weekend[weekend.indexOf('Saturday')];
 // Remove 'Friday from the array'
-
+weekend.shift();
 
 ```
 
@@ -128,15 +132,18 @@ var lifeRafts = 2;
 ```js
 // Create an object literal called `brain` with a property of `energyLevel`
 // that points to the number value 10
-
+var brain = { energyLevel : 10 };
 
 // Access the value 10 within the `brain` object
 //
+var energyLevelOfBrain = brain.energyLevel;
+// or var energyLevelOfBrain = brain['energyLevel'];
 
 // Add a `dream` property to the `brain` that points to the String value
 // "electric sheep"
 //
-
+brain.dream = 'electric sheep';
+brain['dream'] = 'electric sheep';  
 ```
 
 ## Functions
@@ -147,7 +154,9 @@ var lifeRafts = 2;
 //
 //
 //
-
+var areaOfRect = function(length, width) {
+  return length * width;
+}
 ```
 
 ```js
@@ -155,4 +164,5 @@ var lifeRafts = 2;
 // save it to a variable
 //
 //
+var area = areaOfRect(3, 4);
 ```

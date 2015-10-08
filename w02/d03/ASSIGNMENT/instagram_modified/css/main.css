@@ -1,0 +1,18 @@
+body {
+  background: url("../images/bgtile.png") repeat-x;
+  font-family: "Helvetica Neue";
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.phones {
+  width: 512px;
+}
+
+. 
+.contents-box {
+  width: 504px;
+}
