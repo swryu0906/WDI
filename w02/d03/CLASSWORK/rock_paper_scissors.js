@@ -39,6 +39,14 @@ var whoWins = function(comInput, userInput) {
   }
 }
 
+var displayResult = function(comInput, userInput) {
+  var result = whoWins(comInput, userInput);
+  switch(result) {
+    case 'TIE':
+      message.innerHTML = ''
+  }
+}
+
 var readyGame = function() {
     message.innerHTML = 'Do you want to a game?';
     rpsButtons.classList.add('hidden');

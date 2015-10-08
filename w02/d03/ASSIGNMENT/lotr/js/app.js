@@ -66,7 +66,7 @@ var makeHobbits = function() {
   var hobit;
   for(var i = 0; i < hobbits.length; i++) {
     hobit = document.createElement('li');
-    hobit.setAttribute('className', 'hobbit');
+    hobit.setAttribute('class', 'hobbit');
     hobit.setAttribute('id', hobbits[i]);
     hobit.innerHTML = hobbits[i];
     ulHobbits.appendChild(hobit);
@@ -90,7 +90,7 @@ var makeBaddies = function() {
   var baddy;
   for(var i = 0; i < baddies.length; i++) {
     baddy = document.createElement('li');
-    baddy.setAttribute('className', 'baddy');
+    baddy.setAttribute('class', 'baddy');
     baddy.setAttribute('id', baddies[i]);
     baddy.innerHTML = baddies[i];
     ulBaddies.appendChild(baddy);
@@ -109,7 +109,7 @@ var makeBuddies = function() {
   var buddy;
   for(var i = 0; i < buddies.length; i++) {
     buddy = document.createElement('li');
-    buddy.setAttribute('className', 'buddies');
+    buddy.setAttribute('class', 'buddies');
     buddy.innerHTML = buddies[i];
     buddy.setAttribute('id', buddies[i]);
     ulBuddies.appendChild(buddy);
@@ -159,9 +159,6 @@ var theBalrog = function() {
   gandalf.setAttribute('class', 'the-white');
   // in the style.css, add a css rule to make elements of the class "the-white"
   // have a white background and a grey border
-  var theWhite = document.getElementsByClassName('the-white')[0];
-  theWhite.style.backgroundColor = 'white';
-  theWhite.style.border = '2px solid grey';
 };
 
 var hornOfGondor = function() {
@@ -177,19 +174,47 @@ var hornOfGondor = function() {
 
 var itsDangerousToGoAlone = function(){
   // take Frodo and Sam out of the fellowship and move them to Mordor
+  var frodo = document.getElementById('Frodo Baggins');
+  var sam = document.getElementById('Samwise \'Sam\' Gamgee');
+  var mordor = document.getElementById('Mordor');
+  mordor.appendChild(frodo);
+  mordor.appendChild(sam);
   // add a div with an id of 'mount-doom' to Mordor
+  var mountDoom = document.createElement('div');
+  mountDoom.setAttribute('id', 'mount-doom');
+  mountDoom.innerHTML = 'Mount Doom';
+  mordor.appendChild(mountDoom);
 };
 
 var weWantsIt = function() {
   // Create a div with an id of 'gollum' and add it to Mordor
   // Remove the ring from Frodo and give it to Gollum
   // Move Gollum into Mount Doom
+  var gollum = document.createElement('div');
+  gollum.setAttribute('id', 'gollum');
+  gollum.innerHTML = 'Gollum';
+  document.getElementById('Mordor').appendChild(gollum);
+  gollum.appendChild(document.getElementById('the-ring'));
+  document.getElementById('mount-doom').appendChild(gollum);
+
+
 };
 
 var thereAndBackAgain = function() {
   // remove Gollum and the Ring from the document
   // remove all the baddies from the document
   // Move all the hobbits back to the shire
+  document.getElementById('gollum').remove();
+  var baddies = document.getElementsByClassName('baddy');
+  for(var i = 0; i < baddies.length; i++) baddies[i].remove();
+
+  var shire = document.getElementById('The Shire');
+
+  var ulHobbits = document.getElementById('hobbits');
+  var hobbits = document.getElementsByClassName('hobbit');
+  for(var i = 0; i < hobbits.length; i++) ulHobbits.appendChild(hobbits[i]);
+
+  document.getElementById('The Shire').appendChild(ulHobbits);
 };
 
 // ==============================
@@ -218,7 +243,7 @@ window.onload = function() {
   document.getElementById('8').addEventListener('click', forgeTheFellowShip);
   document.getElementById('9').addEventListener('click', theBalrog);
   document.getElementById('10').addEventListener('click', hornOfGondor);
-  document.getElementById('11').addEventListener('click');
-  document.getElementById('12').addEventListener('click');
-  document.getElementById('13').addEventListener('click');
+  document.getElementById('11').addEventListener('click', itsDangerousToGoAlone);
+  document.getElementById('12').addEventListener('click', weWantsIt);
+  document.getElementById('13').addEventListener('click', thereAndBackAgain);
 };
