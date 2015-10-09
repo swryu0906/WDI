@@ -1,4 +1,5 @@
 var startTimer = function() {
+
 	stopWatchHandle = setInterval(function() {
 		var currentTime = Number(document.getElementById('stopwatch').textContent);
 		currentTime++;
@@ -23,4 +24,3 @@ window.onload = function() {
   document.getElementById('stop').addEventListener('click', stopTimer);
   document.getElementById('reset').addEventListener('click', resetTimer);
 };
-
