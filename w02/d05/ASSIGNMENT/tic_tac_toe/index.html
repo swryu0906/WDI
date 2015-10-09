@@ -2,14 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" src="style.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
     <title>Tic Tac Toe Game</title>
   </head>
   <body>
+    <div id="title">
+      <h1>Tic Tac Toe Game</h1>
+      <div id="message-box">
+        <h2 id="message" class="">Do you want to play a new game?</h2>
+        <input type="button" name="button" value="New Game">
+      </div>
+    </div>
     <div id="info">
       <div id="X" class="">Player X</div>
       <div id="O" class="">Player O</div>
-      <div id="message" class=""></div>
     </div>
     <table>
       <tr>
