@@ -1,4 +1,6 @@
 function Cell() {
+  var self = this;
+
   // value should be either 'X', 'O', and ''
   // default value should be ''
   this.value = '';
@@ -9,13 +11,13 @@ function Cell() {
 
   // set() function should set the current value of that particular cell
   this.set = function(newValue) {
-    this.value = newValue;
-    this.playable = false;
+    self.value = newValue;
+    self.playable = false;
   };
 
   // get() function should return value
   this.get = function() {
-    return this.value;
+    return self.value;
   };
 
   // isPlayable() function should return a boolean indicating
@@ -23,15 +25,6 @@ function Cell() {
   // If the cell already has a value that means the cell was already played
   // and it cannot be playable anymore.
   this.isPlayable = function() {
-    return this.playable;
+    return self.playable;
   };
 }
-
-
-var cell = new Cell();
-console.log('cell.get() = ' + cell.get());
-console.log('cell.isPlayable() = ' + cell.isPlayable());
-cell.set('X');
-console.log('cell.set(\'X\');');
-console.log('cell.get() = ' + cell.get());
-console.log('cell.isPlayable() = ' + cell.isPlayable());
