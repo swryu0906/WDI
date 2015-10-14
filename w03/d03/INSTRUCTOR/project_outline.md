@@ -76,8 +76,18 @@ Test your wits & knowledge with whatever-the-heck you know about (so you can act
 * Make a GitHub issue and follow the rubric below. 
 * [Rubric to ask for help ](https://gist.githubusercontent.com/ColinTheRobot/d434c89546135dab3ac6/raw/3d5e9647a46e51aa86001f3d845897a280cda14a/gistfile1.md)
 * **REMEMBER to asign one of the instructors to your issue so we're notified**.
-	* ColinTheRobot, DBrodsky90, humanman, sssyed 	
+	* ColinTheRobot, DBrodsky90, humanman, sssyed
 
+
+---
+### PROTIPS
+
+* [PROTIP-1] **Commit often and with rigour.** (def. the quality of being extremely thorough, exhaustive, or accurate.)
+* [PROTIP-2] **Comment your code.** This is a longer format you're not always going to remember why you wrote the code you wrote an hour ago, a day ago, four days ago. 
+* [PROTIP-3] **Break your problem down.** Small pieces.
+* [PROTIP-4] **Pass/Fail.** Test each part of your code as you build it.
+* [PROTIP-5] **ERRORS ARE YOUR FRIEND!**
+* [PROTIP-6] **KISS (Keep It Simple Stupid: actual software design [principle](https://en.wikipedia.org/wiki/KISS_principle))** If your code is starting to look crazy complex, deep breath, step away, and reevaluate.
 
 ---
 
