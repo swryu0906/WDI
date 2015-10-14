@@ -75,7 +75,8 @@ Test your wits & knowledge with whatever-the-heck you know about (so you can act
 ### How to ask for help! 
 * Make a GitHub issue and follow the rubric below. 
 * [Rubric to ask for help ](https://gist.githubusercontent.com/ColinTheRobot/d434c89546135dab3ac6/raw/3d5e9647a46e51aa86001f3d845897a280cda14a/gistfile1.md)
-* **REMEMBER to asign one of the instructors to your issue so we're notifiedu**.
+* **REMEMBER to asign one of the instructors to your issue so we're notified**.
+	* ColinTheRobot, DBrodsky90, humanman, sssyed 	
 
 
 ---
