@@ -9,7 +9,7 @@ Define three function that will:
 
 Based on the input values, your function should create that number of shapes, with the provided color, and append them to the appropriate container.
 
-i.e. If the function `makeCircles` is called, and the input boxes hold the values: 3 and indianred, then the shape container for circles should contain three indianred circles.
+i.e. If the function `makeCircles` is called, and the input boxes hold the values: 3 and indianred, then the shape container for circles should contain three indianred circles. ( divs with the class of circle )
 
 For things, you should create a circle with a background that changes depending on whether the user inputs `sheen or cage`. Default to `sheen`.
 
