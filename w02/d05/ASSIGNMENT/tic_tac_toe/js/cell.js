@@ -3,7 +3,7 @@ function Cell() {
 
   // value should be either 'X', 'O', and ''
   // default value should be ''
-  this.value = '';
+  this.valueOfCell = '';
 
   // playble should be set false whenever value is filled by 'X' or 'O'
   // the default value of playable is true
@@ -11,13 +11,13 @@ function Cell() {
 
   // set() function should set the current value of that particular cell
   this.set = function(newValue) {
-    self.value = newValue;
+    self.valueOfCell = newValue;
     self.playable = false;
   };
 
   // get() function should return value
   this.get = function() {
-    return self.value;
+    return self.valueOfCell;
   };
 
   // isPlayable() function should return a boolean indicating

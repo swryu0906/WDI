@@ -93,7 +93,8 @@ function Board() {
 
       var isSame = function (indexArray) {
         // console.log(indexArray);
-        if(!self.cellList[indexArray[0]].value) return false;
+        console.log(self.cellList);
+        if(!self.cellList[indexArray[0]].valueOfCell) return false;
         for(var i = 1; i < indexArray.length; i++)
           if(self.cellList[indexArray[0]].get() !== self.cellList[indexArray[i]].get()) return false;
         self.winner = self.currentPlayer;
