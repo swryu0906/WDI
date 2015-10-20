@@ -1,11 +1,14 @@
+
+
+
 window.onload = function() {
   console.log("Hi");
 
 
   // As a user, I want cards in the done column to disappear
   // when I click 'X', so I can keep my done column compact.
-  $('#done-column').on('click', '.delete', function() {
-    $(this).closest('.card.done').remove();
+  $('.card-list').on('click', '.delete', function() {
+    $(this).closest('.card').remove();
   });
 
   // As a user, I want cards in the to do column to move to the done column
