@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <script>
+      // sortcut
+      dom = document;
+
+      // gameboard data structure
+      var gameboard = [
+        '&nbsp', '&nbsp', '&nbsp',
+        '&nbsp', '&nbsp', '&nbsp',
+        '&nbsp', '&nbsp', '&nbsp'
+      ];
+
+      // turn state
+      var turn = 'X';
+
+      var switchTurn = function() {
+        if(turn === 'X') turn = 'O';
+        else turn = 'X';
+      };
+
+      // render the board
+      var renderBoard = function() {
+        for(var i = 0; i < gameboard.length; i++) {
+          if(i % 3 === 0) {
+            var row = dom.createElement('div');
+            dom.body.appendChild(row);
+          }
+          var button = dom.createElement('button');
+          button.setAttribute('id', i);
+          button.innerHTML = gameboard[i];
+          // The above is same as button.textContent = gameboard[i];
+          row.appendChild(button);
+        }
+      };
+
+      // update gameboard
+      var updateGame = function(gameObject) {
+        gameboard[gameObject.pos] = gameObject.value;
+        var element = dom.getElementById(gameObject.pos);
+        element.innerHTML = gameObject.value;
+        checkWin();
+      }
+
+
+      var checkWin = function() {
+        // check only the first row
+        if(gameboard[0] == gameboard[1]) {
+          if(gameboard[1] === gameboard[2]) {
+            if(gameboard[2] === 'X') alert('X wins');
+            else if(gameboard[2] === 'O') alert('O wins');
+          }
+        }
+      }
+
+      var setEvents = function() {
+        for (var i = 0; i < gameboard.length; i++) {
+          var element = dom.getElementById(i);
+          element.addEventListener('click', function(eventObject) {
+            // var turn = getTurn();
+            var gameObject =
+              { "pos": eventObject.target.id,
+                "value": turn
+            };
+            updateGame(gameObject);
+            switchTurn();
+          });
+        }
+      }
+
+      renderBoard();
+      setEvents();
+
+    </script>
+  </body>
+</html>
