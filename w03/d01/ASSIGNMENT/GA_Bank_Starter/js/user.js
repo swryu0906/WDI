@@ -26,7 +26,7 @@ function User() {
           this.accounts['saving'].balance -= (amount - this.accounts[accountType].balance);
         }
         else {
-          this.account['checking'].balance -= (amount - this.accounts[accountType].balance);
+          this.accounts['checking'].balance -= (amount - this.accounts[accountType].balance);
         }
 
         this.accounts[accountType].balance = 0;

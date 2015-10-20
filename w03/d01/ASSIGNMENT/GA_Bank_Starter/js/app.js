@@ -8,7 +8,7 @@ $('.account').on('click', '.deposit', function() {
     newUser.deposit('checking', amount);
     // accountDiv.find('.balance').html('$' + newUser.accounts['checking'].balance.toString());
   }
-  else {
+  else if(accountDiv.hasClass('saving')){
     newUser.deposit('saving', amount);
     // accountDiv.find('.balance').html('$' + newUser.accounts['saving'].balance.toString());
   }
@@ -22,7 +22,7 @@ $('.account').on('click', '.withdraw', function() {
     newUser.withdraw('checking', amount);
     // accountDiv.find('.balance').html('$' + newUser.accounts['checking'].balance.toString());
   }
-  else {
+  else if(accountDiv.hasClass('saving')){
     newUser.withdraw('saving', amount);
     // accountDiv.find('.balance').html('$' + newUser.accounts['saving'].balance.toString());
   }
