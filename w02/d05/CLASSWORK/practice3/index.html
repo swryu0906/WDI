@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style media="screen">
+      #our-btn {
+        text-align: center;
+        margin: 170px auto;
+        pading: 20px 0;
+        display: block;
+        height: 40px;
+        width: 175px;
+
+        line-height: 5px;
+        cursor: crosshair;
+        font-size: 25px;
+        /*color: #f0f0f0;*/
+        border-radius: 10px;
+        border-bottom: 4px solid #0045a6;
+        box-shadow: 6px 6px 6px #999;
+
+        background: linear-gradient(#00c8f8, #0067f7);
+        transition: background 0.05s linear;
+
+        background-size: 1px 200px;
+
+        transition: all .05s linear;
+      }
+
+      #our-btn:hover {
+        background-position: 100px;
+      }
+
+      #our-btn:active {
+        box-shadow: 2px 2px 2px #777;
+        border-bottom: 1px solid #0045a6;
+        transform: translateY(3px);
+      }
+    </style>
+
+  </head>
+  <body>
+    <button id="our-btn">button</button>
+
+
+    <script type="text/javascript">
+      var EventConstructor = function(element) {
+        // this will tie elements to object.
+        this.name = 'We are in the right scope!';
+        console.log('Inside EC, this = ' + this);
+
+        this.onclick1 = function(event) {
+          // debugger
+          console.log('Inside onclick1, this = ' + this);
+          console.log('Inside onclick1, event.target = ' + event.target);
+          console.log('this.name = ' + this.name);
+        };
+
+        this.onclick2 = function(event) {
+          console.log('Inside onclick2, this = ' + this);
+          console.log('Inside onclick2, event.target = ' + event.target);
+          console.log(this.name);
+        }
+
+        // element.addEventListener('click', this.onclick1);
+
+        element.addEventListener('click', this.onclick2.bind(this));
+      };
+
+      var button = document.querySelector('#our-btn');
+      EventConstructor(button);
+    </script>
+
+  </body>
+</html>
