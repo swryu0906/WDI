@@ -19,14 +19,15 @@ o = ["59th", "50th", "ts", "34th-o", "28th-o"]
 
 # display the list of all stops on the given line
 def display_stops(line)
-  puts "\nLine #{@hash_to_line[line.to_sym]} : #{@mta[line.to_sym].join(" - ")}"
+  puts "Line #{@hash_to_line[line.to_sym]} : #{@mta[line.to_sym].join(" - ")}"
 end
 
 
 # display the list of lines with their stops on the given lines
 def display_lines(lines)
+  puts "\nSubway Lines\n"
   lines.each do |line|
-    display_stops(line)
+    puts "Line #{@hash_to_line[line.to_sym]} : #{@mta[line.to_sym].join(" - ")}"
   end
 end
 
@@ -65,28 +66,64 @@ end
 
 # get the number of stops for the trip on the same line
 def get_num_of_stops(line, origin_stop, dest_stop)
-  origin_index = @mta[line.to_sym].index(origin_stop)
-  dest_index = @mta[line.to_sym].index(dest_stop)
+  origin_index = @mta[line.to_sym].index(origin_stop).to_i
+  dest_index = @mta[line.to_sym].index(dest_stop).to_i
   return (origin_index - dest_index).abs
 end
 
+def display_one_line_trip(info)
+  num_of_total_stops = get_num_of_stops(info[:origin_line], info[:origin_stop], info[:dest_stop])
+  puts "\nYour origin stop is #{info[:origin_stop]} and your destination stop is #{info[:dest_stop]}"
+  puts "You need #{num_of_total_stops} stops on #{@hash_to_line[info[:origin_line].to_sym]} line."
+end
+
+
+# display the two line trip and return the sum of stops for the trip
+def display_two_line_trip(info)
+  if (info[:origin_line] === 'n' && info[:dest_line] === 'o')|| (info[:origin_line] === 'o' && info[:dest_line] === 'n')
+    transfer_stop = "ts"
+  else
+    transfer_stop = "us"
+  end
+
+  num_of_stops_1 = get_num_of_stops(info[:origin_line], info[:origin_stop], transfer_stop)
+  num_of_stops_2 = get_num_of_stops(info[:dest_line], transfer_stop, info[:dest_stop])
+  num_of_total_stops = num_of_stops_1 + num_of_stops_2
+
+  puts "\nYou need #{num_of_stops_1} stops on #{info[:origin_line].upcase} line."
+  puts "You need to transfer at #{transfer_stop}."
+  puts "You need #{num_of_stops_2} stops on #{info[:dest_line].upcase} line."
+
+  num_of_total_stops
+end
 
 # display the number of stops result calculated
 def display_result(info)
-  if(info[:origin_line] === info[:dest_line])
-    num_of_total_stops = get_num_of_stops(info[:origin_line], info[:origin_stop], info[:dest_stop])
-    puts "\nYour origin stop is #{info[:origin_stop]} and your destination stop is #{info[:dest_stop]}"
-    puts "You need #{num_of_total_stops} stops on #{@hash_to_line[info[:origin_line].to_sym]} line."
+  num_of_total_stops = 0
+  info_1 = {}
+  info_2 = {}
+  if info[:origin_line] === info[:dest_line]
+    display_one_line_trip(info)
   else
-    num_of_stops_1 = get_num_of_stops(info[:origin_line], info[:origin_stop], "us")
-    num_of_stops_2 = get_num_of_stops(info[:dest_line], info[:dest_stop], "us")
-    num_of_total_stops = num_of_stops_1 + num_of_stops_2
+    if (info[:origin_line] === "o" && (info[:dest_line] === 'l' || info[:dest_line] === 's')) || (info[:dest_line] === "o" && (info[:origin_line] === 'l' || info[:origin_line] === "s"))
 
-    puts "\nYou need #{num_of_stops_1} stops on #{info[:origin_line].upcase} line."
-    puts "You need to transfer at us."
-    puts "You need #{num_of_stops_2} stops on #{info[:dest_line].upcase} line."
-    puts "You need total #{num_of_total_stops} stops."
+      info_1[:origin_line] = info[:origin_line]
+      info_1[:dest_line] = "n"
+      info_1[:origin_stop] = info[origin_line]
+      info_1[:dest_stop] = "ts"
+      info_2[:origin_line] = "n"
+      info_2[:dest_line] = info[:origin_line]
+      info_1[:origin_stop] = "ts"
+      info_1[:dest_stop] = info[dest_stop]
+
+      num_of_total_stops += display_two_line_trip(info_1)
+      num_of_total_stops += display_two_line_trip(info_2)
+    else
+      num_of_total_stops = display_two_line_trip(info)
+    end
   end
+
+  puts "\nYou need total #{num_of_total_stops} stops."
 end
 
 
@@ -100,7 +137,7 @@ def one_line(line)
   info[:dest_line] = line
 
   # display the list of all stops on the given line
-  display_stops(line)
+  display_lines([line])
 
   # ask the stop the user wants to get on at
   info[:origin_stop] = ask_stop(info[:origin_line], :origin)
@@ -117,6 +154,9 @@ end
 # Two lines functionality (N and L)
 # Commit 3
 # Three lines functionality (N, L and 6)
+# Commit 4 (Bonus)
+# Add functionality for a fourth line, the 1 line
+
 
 def multiple_lines(lines)
   info = Hash.new
@@ -147,14 +187,7 @@ def multiple_lines(lines)
 end
 
 
-# lines = Array.new
-# @mta.each_key do |key|
-#   lines.push(key.to_s)
-# end
-# two_lines(lines)
-# # one_line("n")
-
-
+# display the tile of program
 def display_title
   print "" +
     "\n              ███╗   ███╗████████╗ █████╗     ███████╗██╗   ██╗██████╗ ██╗    ██╗ █████╗ ██╗   ██╗" +
@@ -169,6 +202,7 @@ def display_title
 end
 
 
+# display the main menu
 def display_main_menu
   print "" +
     "\n1. One line functionality ( N line )" +
@@ -194,8 +228,13 @@ def display_main_menu
 end
 
 
+# main app
 def subway
   display_title()
+  all_lines = Array.new
+  @mta.each_key do |key|
+    all_lines.push(key.to_s)
+  end
 
   begin
     user_choice = display_main_menu()
@@ -208,7 +247,7 @@ def subway
     when "3"
       multiple_lines(["n", "l", "s"])
     when "4"
-      multiple_lines()
+      multiple_lines(all_lines)
     end
   end while user_choice != "5"
 
