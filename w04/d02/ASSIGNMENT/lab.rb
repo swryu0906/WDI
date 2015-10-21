@@ -97,7 +97,7 @@ end
 def maximus(array)
   longest = ""
   array.each do |str|
-    longest = str if str.length > longest.length
+    longest = str if str.length > longst.length
   end
   longest
 end
