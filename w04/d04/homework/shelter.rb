@@ -19,14 +19,22 @@ class Shelter
   end
 
   def display_clients
-    self.clients.each_index do |index|
-      puts "#{index.to_s.rjust(2, "0")}. name : #{self.clients[index].name}, age : #{self.clients[index].age}"
+    if self.clients.empty?
+      puts "There is no client."
+    else
+      self.clients.each_index do |index|
+        puts "#{index.to_s.rjust(2, "0")}. name : #{self.clients[index].name}, age : #{self.clients[index].age}"
+      end
     end
   end
 
   def display_animals
-    self.animals.each_index do |index|
-      puts "#{index.to_s.rjust(2, "0")}. name : #{self.animals[index].name}, species : #{self.animals[index].species}"
+    if self.animals.empty?
+      puts "There is no animal."
+    else
+      self.animals.each_index do |index|
+        puts "#{index.to_s.rjust(2, "0")}. name : #{self.animals[index].name}, species : #{self.animals[index].species}"
+      end
     end
   end
 
