@@ -13,7 +13,15 @@ class Alarm
     condition = true
     time = 0
     while condition && time < @length do
-      print "Wake up! Wake up! (if you want to snooze, press Y/y) :"
+      print "" +
+        "\n██╗    ██╗ █████╗ ██╗  ██╗███████╗    ██╗   ██╗██████╗     ██╗" +
+        "\n██║    ██║██╔══██╗██║ ██╔╝██╔════╝    ██║   ██║██╔══██╗    ██║" +
+        "\n██║ █╗ ██║███████║█████╔╝ █████╗      ██║   ██║██████╔╝    ██║" +
+        "\n██║███╗██║██╔══██║██╔═██╗ ██╔══╝      ██║   ██║██╔═══╝     ╚═╝" +
+        "\n╚███╔███╔╝██║  ██║██║  ██╗███████╗    ╚██████╔╝██║         ██╗" +
+        "\n ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝     ╚═════╝ ╚═╝         ╚═╝" +
+        "\n"
+      print "If you want to snooze, press Y / y :"
       # snooze if gets.chomp.upcase == "Y"
       response = gets.chomp.upcase
       if response === "Y" then
@@ -107,16 +115,42 @@ end
 def display_title
 
   print "\n" +
-"\n             █████╗ ██╗      █████╗ ██████╗ ███╗   ███╗     ██████╗██╗      ██████╗  ██████╗██╗  ██╗" +
-"\n            ██╔══██╗██║     ██╔══██╗██╔══██╗████╗ ████║    ██╔════╝██║     ██╔═══██╗██╔════╝██║ ██╔╝" +
-"\n            ███████║██║     ███████║██████╔╝██╔████╔██║    ██║     ██║     ██║   ██║██║     █████╔╝ " +
-"\n            ██╔══██║██║     ██╔══██║██╔══██╗██║╚██╔╝██║    ██║     ██║     ██║   ██║██║     ██╔═██╗ " +
-"\n            ██║  ██║███████╗██║  ██║██║  ██║██║ ╚═╝ ██║    ╚██████╗███████╗╚██████╔╝╚██████╗██║  ██╗" +
-"\n            ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝     ╚═════╝╚══════╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝" +
-"\n" +
-"\n                                                                                      By Sungwon Ryu" +
-"\n"
+    "\n              █████╗ ██╗      █████╗ ██████╗ ███╗   ███╗     ██████╗██╗      ██████╗  ██████╗██╗  ██╗" +
+    "\n             ██╔══██╗██║     ██╔══██╗██╔══██╗████╗ ████║    ██╔════╝██║     ██╔═══██╗██╔════╝██║ ██╔╝" +
+    "\n             ███████║██║     ███████║██████╔╝██╔████╔██║    ██║     ██║     ██║   ██║██║     █████╔╝ " +
+    "\n             ██╔══██║██║     ██╔══██║██╔══██╗██║╚██╔╝██║    ██║     ██║     ██║   ██║██║     ██╔═██╗ " +
+    "\n             ██║  ██║███████╗██║  ██║██║  ██║██║ ╚═╝ ██║    ╚██████╗███████╗╚██████╔╝╚██████╗██║  ██╗" +
+    "\n             ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝     ╚═════╝╚══════╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝" +
+    "\n" +
+    "\n                                                                                       By Sungwon Ryu" +
+    "\n"
 end
+
+
+def display_main_menu
+  print "\n" +
+    "\n1. Set current time" +
+    "\n2. Set a new alarm" +
+    "\n3. Edit the alarm settings" +
+    "\n4. Start the alarm clock" +
+    "\n5. Quit" +
+    "\n\n"
+
+    menu = (1..5).collect { |x| x.to_s }
+
+    print "Please choose one of the above menu : "
+    user_response = gets.chomp
+    menu = (1..5).collect { |x| x.to_s }
+
+    unless menu.include?(user_response)
+      puts "\nError! You entered a wrong number!"
+      print "Please choose one of the above menu : "
+      user_response = gets.chomp
+    end
+
+    user_response
+end
+
 
 display_title
 
