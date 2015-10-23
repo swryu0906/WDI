@@ -13,9 +13,9 @@
 class Shelter
   attr_accessor(:name, :animals, :clients)
   def initialize(params)
-    @name = params[:name]
-    @animals = []
-    @clients = []
+    self.name = params[:name]
+    self.animals = []
+    self.clients = []
   end
 
   def display_clients
@@ -23,7 +23,7 @@ class Shelter
       puts "There is no client."
     else
       self.clients.each_index do |index|
-        puts "#{index.to_s.rjust(2, "0")}. name : #{self.clients[index].name}, age : #{self.clients[index].age}"
+        puts "#{index.to_s}. name : #{self.clients[index].name}, age : #{self.clients[index].age}"
       end
     end
   end
@@ -33,16 +33,16 @@ class Shelter
       puts "There is no animal."
     else
       self.animals.each_index do |index|
-        puts "#{index.to_s.rjust(2, "0")}. name : #{self.animals[index].name}, species : #{self.animals[index].species}"
+        puts "#{index.to_s}. name : #{self.animals[index].name}, species : #{self.animals[index].species}"
       end
     end
   end
 
-  def adopt(client_index, animal_index)
+  def adopt_animal(client_index, animal_index)
     self.clients[client_index].pets << self.animals.delete_at(animal_index)
   end
 
-  def return(client_index, client_pet_index)
+  def return_animal(client_index, client_pet_index)
     self.animals << self.clients[client_index].pets[client_pet_index]
   end
 end

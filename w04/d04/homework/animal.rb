@@ -7,8 +7,8 @@
 class Animal
   attr_accessor(:name, :species, :toys)
   def initialize(params)
-    @name = params[:name]
-    @species = params[:species]
-    @toys = []
+    self.name = params[:name]
+    self.species = params[:species]
+    self.toys = []
   end
 end
