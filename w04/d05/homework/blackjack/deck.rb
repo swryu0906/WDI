@@ -5,9 +5,6 @@
 # - Should be able to remove a random card
 # - Should be able to reset itself
 
-require_relative('card')
-require_relative('hand')
-
 class Deck
   private
 
@@ -41,13 +38,9 @@ class Deck
     end
   end
 
-  def display_card(card)
-    puts "Card: #{card.unicode} #{card.kind}"
-  end
-
   def shuffle_cards
-    # self.cards.sort_by { rand }
     cards.shuffle!
+    # self.cards.sort_by { rand }
   end
 
   def pick_card

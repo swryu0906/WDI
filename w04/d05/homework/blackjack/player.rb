@@ -6,22 +6,13 @@
 # - Should be able to tell if his hand is a bust
 # - Should be able to tell if his hand is a win
 
-require_relative('card')
-require_relative('hand')
-
 class Player
-  private
-
-  attr_accessor(:hand)
+  attr_reader(:hand, :name)
 
   def initialize(options = {})
     @name = options[:name] || "Player"
     @hand = Hand.new
   end
-
-  public
-
-  attr_accessor(:name)
 
   def hit(card)
     hand.add_card(card)

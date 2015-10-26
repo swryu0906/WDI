@@ -18,4 +18,8 @@ class Card
   def is_ace?
     self.kind == "Ace"
   end
+
+  def to_string
+    puts "Card: #{card.unicode} #{card.kind}"
+  end
 end

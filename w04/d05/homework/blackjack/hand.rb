@@ -10,13 +10,11 @@ class Hand
 
   def initialize
     @cards = []
-    # @hand_value = 0
   end
 
   public
   def add_card(card)
     cards << card
-    # @hand_value += card.value
   end
 
   # get_hand_value function returns the sume of card.value in self.cards array
