@@ -1,0 +1,5 @@
+<ul>
+  <% @topics.each do |topic| %>
+  <li><h2><a href="./<%= topic.downcase %>"><%= topic.split("").join('~~') %></a></h2></li>
+  <% end %>
+</ul>

@@ -1,0 +1,5 @@
+<ul>
+  <% @html_problems.each do |problem| %>
+  <li><h2><a href="./<%= problem %>"><%= problem.split("").join('~') %></a></h2></li>
+  <% end %>
+</ul>
