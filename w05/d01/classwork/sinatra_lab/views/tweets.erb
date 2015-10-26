@@ -1,0 +1,15 @@
+<div>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Comment</th>
+    </tr>
+    <% @tweets.each do |tweet| %>
+    <tr>
+      <td><%= tweet[:name] %></td>
+      <td><%= tweet[:comment] %></td>
+    </tr>
+    <% end %>
+  </table>
+
+</div>
