@@ -20,15 +20,15 @@ class Deck
 
   def construct_cards
     new_cards = []
-    suits = ["heart", "diamond", "spade", "club"]
+    suit_unicode_paris = { "heart": "\u2665", "diamond": "\u2666", "spade": "\u2660", "club": "\u2663" }
     kind_value_pairs = { "Jack": 10, "Queen": 10, "King": 10, "Ace": 11 }
 
     # iterate each suit
-    suits.each do |suit|
+    suit_unicode_paris.each do |suit, unicode|
       # iterate from 2 to 10
-      (2..10).each { |num| new_cards << Card.new(suit: suit, kind: num.to_s, value: num) }
+      (2..10).each { |num| new_cards << Card.new(suit: suit, kind: num.to_s, value: num, unicode: unicode) }
       # iterate from Jack to Ace
-      kind_value_pairs.each { |kind, value| new_cards << Card.new(suit: suit, kind: kind, value: value) }
+      kind_value_pairs.each { |kind, value| new_cards << Card.new(suit: suit, kind: kind, value: value, unicode: unicode) }
     end
     new_cards
   end
@@ -37,8 +37,12 @@ class Deck
 
   def display_cards
     cards.each do |card|
-      puts "suit: #{card.suit}, kind: #{card.kind}, value: #{card.value}"
+      puts "suit: #{card.suit}, kind: #{card.kind}, value: #{card.value}, unicode: #{card.unicode}"
     end
+  end
+
+  def display_card(card)
+    puts "Card: #{card.unicode} #{card.kind}"
   end
 
   def shuffle_cards

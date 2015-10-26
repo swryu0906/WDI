@@ -14,11 +14,14 @@ class Player
 
   attr_accessor(:hand)
 
-  def initialize
+  def initialize(options = {})
+    @name = options[:name] || "Player"
     @hand = Hand.new
   end
 
   public
+
+  attr_accessor(:name)
 
   def hit(card)
     hand.add_card(card)

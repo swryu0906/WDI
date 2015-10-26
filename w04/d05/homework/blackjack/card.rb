@@ -5,12 +5,13 @@
 # - Should have a value (If the kind is Jack, the value should be 10)
 
 class Card
-  attr_reader(:suit, :kind, :value)
+  attr_reader(:suit, :kind, :value, :unicode)
 
   def initialize(params)
     @suit = params[:suit]
     @kind = params[:kind]
     @value = params[:value]
+    @unicode = params[:unicode]
   end
 
   # is_ace? function check whether self.kind is "Ace" or not
