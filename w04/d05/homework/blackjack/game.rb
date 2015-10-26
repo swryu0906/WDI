@@ -30,8 +30,8 @@ class Game
 
     begin
       user_input = get_user_input("Do you want to hit(h/H) or stand(s/S)", ["h", "s"])
-      play_hit(player)
-    end while user_input != "s" && !player.is_bust?
+      play_hit(player) if user_input == "h"
+    end while user_input == "h" && !player.is_bust?
 
     # When the player's hand_value exceeds 21
     if !player.is_bust?
@@ -64,5 +64,6 @@ class Game
       print "#{question} : "
       user_input = gets.chomp.downcase
     end
+    user_input
   end
 end
