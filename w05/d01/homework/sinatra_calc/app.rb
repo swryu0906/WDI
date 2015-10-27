@@ -1,6 +1,7 @@
-
+require_relative('calculator')
 
 class SinatraCalc < Sinatra::Base
+
 
   get '/' do
     redirect '/calc'
@@ -32,32 +33,23 @@ class SinatraCalc < Sinatra::Base
 
 
   def parse_operation(operation, num_1, num_2)
+    @calc = Calculator.new
     case operation
     when 'add'
-      add(num_1, num_2)
+      @calc.add(num_1, num_2)
     when 'subtract'
-      subtract(num_1, num_2)
+      @calc.subtract(num_1, num_2)
     when 'multiply'
-      multiply(num_1, num_2)
+      @calc.multiply(num_1, num_2)
     when 'divide'
-      divide(num_1, num_2)
+      @calc.divide(num_1, num_2)
+    when 'root'
+      @calc.root(num_1, num_2)
+    when 'power'
+      @calc.power(num_1, num_2)
     else
     end
   end
 
-  def add(num_1, num_2)
-    num_1 + num_2
-  end
 
-  def subtract(num_1, num_2)
-    num_1 - num_2
-  end
-
-  def multiply(num_1, num_2)
-    num_1 * num_2
-  end
-
-  def divide(num_1, num_2)
-    num_1 / num_2
-  end
 end
