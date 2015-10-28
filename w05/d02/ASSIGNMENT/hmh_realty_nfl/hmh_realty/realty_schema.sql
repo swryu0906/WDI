@@ -40,7 +40,7 @@ CREATE TABLE office (
   id SERIAL PRIMARY KEY,
   office_no VARCHAR(30) NOT NULL,
   no_of_floors INTEGER,
-  no_of_subicles INTEGER,
+  no_of_cubicles INTEGER,
   no_of_bathrooms INTEGER,
   square_footage INTEGER,
   address VARCHAR(255),
