@@ -1,4 +1,27 @@
 <h1>Here are the students</h1>
 
+<ul>
+<% @students.each do |student| %>
+   <li><a href="/students/<%= student["id"] %>"><%= student["fname"] %> "\
+		 "<%= student["lname"] %></a> <a href="/houses/<%= student["house_id"]%>">House</a></li>
+<% end %>
+</ul>
 
-	
+<!-- <table>
+	<tr>
+		<th>ID</th>
+		<th>Image</th>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>House ID</th>
+	</tr>
+	<% @students.each do |student| %>
+		<tr>
+				<th><%= student["id"] %></th>
+				<th><img src="<%= student["image"] %>"></th>
+				<th><%= student["fname"] %></th>
+				<th><%= student["lname"] %></th>
+				<th><%= student["house_id"] %></th>
+		</tr>
+	<% end %>
+</table> -->

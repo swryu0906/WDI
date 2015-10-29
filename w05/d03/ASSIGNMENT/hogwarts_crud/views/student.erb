@@ -1,0 +1,41 @@
+<div class="student">
+  <h1>Name: <%= @student["fname"] %> <%= @student["lname"] %></h1>
+  <img src="<%= @student["image"] %>" alt="<%= @student["description"] %>">
+</div>
+
+<div class="">
+  <h2>Delete Student</h2>
+  <form action="/students/<%= @student["id"] %>" method="post">
+    <input name="_method" type="hidden" value="delete" />
+    <button type="submit">Delete</button>
+  </form>
+</div>
+
+<div class="">
+  <h2>Update Student</h2>
+  <form action="/students/<%= @student["id"] %>" method="post">
+    <input name="_method" type="hidden" value="put" />
+
+    <label for="fname">First Name</label>
+    <input type="text" name="fname">
+    <br>
+
+    <label for="lname">Last Name</label>
+    <input type="text" name="lname">
+    <br>
+
+    <label for="image">Image</label>
+    <input type="url" name="image">
+    <br>
+
+    <label for="house_id">House</label>
+    <select name="house_id">
+      <% @houses.each do |house| %>
+        <option value="<%= house["id"] %>"><%= house["name"] %></option>
+      <% end %>
+    </select>
+    <br>
+
+    <button type="submit">Update</button>
+  </form>
+</div>

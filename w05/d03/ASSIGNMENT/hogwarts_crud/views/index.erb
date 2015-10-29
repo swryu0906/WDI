@@ -2,3 +2,37 @@
 
 <a href="/houses">View the Houses</a>
 <a href="/students">View the Students</a>
+
+<br>
+<br>
+<br>
+
+<div class="student">
+  <h2>New Student</h2>
+  <h3><%= @message %><h3>
+  <form class="" action="/students/new" method="post">
+
+    <label for="fname">First Name</label>
+    <input type="text" name="fname">
+    <br>
+
+    <label for="lname">Last Name</label>
+    <input type="text" name="lname">
+    <br>
+
+    <label for="image">Image</label>
+    <input type="url" name="image">
+    <br>
+
+    <label for="house_id">House</label>
+    <select name="house_id">
+      <% @houses.each do |house| %>
+        <option value="<%= house["id"] %>"><%= house["name"] %></option>
+      <% end %>
+    </select>
+    <br>
+
+    <input type="submit">
+
+  </form>
+</div>

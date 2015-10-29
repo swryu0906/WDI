@@ -1,3 +1,8 @@
-
-
 <h1>Here are the houses</h1>
+
+<% @houses.each do |house| %>
+<div class="house">
+  <a href="/houses/<%= house["id"] %>"><h2><%= house["name"] %></h2></a>
+  <a href="/houses/<%= house["id"] %>"><img src="<%= house["img_url"] %>" alt="" /></a>
+</div>
+<% end %>
