@@ -1,0 +1,21 @@
+<h1 class="text-center">MLB Team List</h1>
+<div class="text-right"><%= link_to 'Add a team', new_team_path, class: 'btn btn-primary' %></div>
+<br>
+
+<div class="row">
+  <% @teams.each do |team| %>
+    <div class="col-md-4">
+      <div class="thumbnail col-md-10 col-md-offset-1 text-center">
+        <h2><%= team.name %></h2>
+        <h3><%= team.hometown %></h3>
+        <p><%= pluralize(team.num_of_championships, 'championship') %></p>
+        <div class="row">
+          <img class="img-responsive col-md-10 col-md-offset-1" src="<%= team.photo_url %>" alt="<%= team.name %> logo" />
+        </div>
+        <%= link_to 'Detail', team, class: 'col-md-4 btn btn-link' %>
+        <%= link_to 'Edit', edit_team_path(team), class: 'col-md-4 btn btn-link' %>
+        <%= link_to 'Delete', team, method: :delete, class: 'col-md-4 btn btn-link' %>
+      </div>
+    </div>
+  <% end %>
+</div>

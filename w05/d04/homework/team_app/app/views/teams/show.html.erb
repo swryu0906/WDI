@@ -1,0 +1,17 @@
+<h1 class="text-center">Team Details</h1>
+<br>
+<br>
+
+<div class="row">
+  <div class="col-md-5">
+    <img class="img-responsive thumbnail" src="<%= @team.photo_url %>" alt="<%= @team.name %> image"/>
+  </div>
+  <div class="col-md-6 col-md-offset-1">
+    <h2>Name: <%= @team.name %></h2>
+    <h2>Hometown: <%= @team.hometown %></h2>
+    <h2><%= pluralize(@team.num_of_championships, 'championship') %></h2>
+    <p><%= link_to 'Edit Team', edit_team_path(@team), class: 'btn btn-link' %>
+    <%= link_to 'Delete Team', @team, method: :delete, class: 'btn btn-link' %>
+    <%= link_to 'Go Back to Team List', teams_path, class: 'btn btn-link' %></p>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<%= form_for(@team) do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :photo_url, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :hometowon %>
+    <%= f.text_field :hometown, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <% f.label :num_of_championships %>
+    <% f.text_field :num_of_championships, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Submit", class: 'btn btn-primary' %>
+  </div>
+<% end %>
