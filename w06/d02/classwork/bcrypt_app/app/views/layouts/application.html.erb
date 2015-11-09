@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BcryptApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div style="text-align: center; padding-bottom: 20px;s">
+    <div style="display: inline">
+      <% if current_user %>
+        Signed in as <%= current_user.name %> | <%= link_to "Log out" session_path, method: delete %>
+      <% else %>
+        <%= link_to "Log in", 'login' %> | <%= link_to "Sign up", 'signup' %>
+      <% end %>
+
+    </div>
+
+  </div>
+
+    <h1>Hello <%= current_user.name %></h1>
+
+<%= yield %>
+
+</body>
+</html>

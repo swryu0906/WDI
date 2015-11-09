@@ -1,0 +1,27 @@
+<h1>User Signup!</h1>
+
+
+<%= form_for :user, url: "/users" do |f| %>
+<!--  if :user is used instead of @user,
+      in users_controller.rb you don't have to specify @user = User.new
+-->
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
+  </p>
+  <p>
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <p>
+    <%= f.submit "Signup" %>
+  </p>
+<% end %>
