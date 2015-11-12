@@ -4,22 +4,31 @@
 	<meta charset="utf-8">
 	<title>I heart JavaScript</title>
 	<style>
-		.hidden {
+		/*.hidden {
 			visibility: hidden;
-		}
+		}*/
 	</style>
+	<link rel="stylesheet" href="clock.css">
 </head>
 <body>
 	<h1>I ❤ <span class="language">JavaScript</span></h1>
 
-	<ul class="hidden feelings">
+	<ul class="feelings">
 		<li>love</li>
+		<li><a href="#" id="button">Button</a></li>
 	</ul>
+
+	<div class="">
+		<img id="hourhand" src="img/hourhand.png" alt="" />
+		<img id="minutehand" src="img/minutehand.png" alt="" />
+		<img id="secondhand" src="img/secondhand.png" alt="" />
+	</div>
 
 	<script>
 		// attach an event listener to the h1 so that
 		// when the h1 is clicked
 		// the text turns red
 	</script>
+	<script src="clock.js"></script>
 </body>
 </html>
