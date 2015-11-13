@@ -37,9 +37,9 @@ Test out all of your endpoints through your browser, i.e. if you go to `localhos
 - this route should retrieve a random pokemon from the pokemons, should render with pokeInfo
 
 
-####LAYOUT
+####INDEX.HTML
 
-Your layout should have three inputs. Which will send query params to the proper routes. One for search by type, one for search by name and one which is a button that searches random. 
+Your index.html should have three inputs. Which will send query params to the proper routes. One for search by type, one for search by name and one which is a button that searches random. 
 
 
 ####VIEWS
