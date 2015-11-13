@@ -2,7 +2,7 @@
 
 ![PokeExpress](http://i86.photobucket.com/albums/k120/mannynews/Photo_092506_001.jpg)
 
-Tonight we will be building the Pokemon Express using Node, Express and HandleBars!!
+Tonight we will be building the Pokemon Express using Node, Express!!
 
 ### Learning Objectives
 
