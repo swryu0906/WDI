@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>Class Express App</h1>
+    <button class="btn" name="btn" onclick="ajax()">some button</button>
+    <!-- <script src='./script.js'></script> -->
+    <script>
+      function ajax(){
+        console.log("Hi");
+        var request = new XMLHttpRequest();
+        request.open('GET', '/dowjones', true);
+
+        request.onload = function(){
+          if(request.status >= 200 && request.status < 400){
+            var res = request.responseText;
+            console.log(res);
+          }
+          else {
+            console.log('Oh, noes!');
+          }
+        };
+
+        request.onerror = function(){
+          console.log('oh noes!');
+        };
+
+        request.send();
+      }
+
+    </script>
+  </body>
+</html>
