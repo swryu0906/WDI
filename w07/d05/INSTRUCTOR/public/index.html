@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>yes!</title>
+</head>
+<body>
+  <button name="btn" class="btn" onclick="ajax()">ifttt</button>
+  <script type="text/javascript">
+    function ajax(){
+      var request = new XMLHttpRequest();
+      request.open('GET', 'https://maker.ifttt.com/trigger/{enteryourinfo}', true);
+
+      request.onload = function(){
+        if ( request.status >= 200 && request.status < 400){
+          var resp = request.responseText;
+          console.log(resp);
+        } else {
+          console.log("oh noes");
+        }
+      };
+
+      request.onerror = function(){
+        console.log("oh noes");
+      };
+
+      request.send();
+    }
+  </script>
+
+</body>
+</html
