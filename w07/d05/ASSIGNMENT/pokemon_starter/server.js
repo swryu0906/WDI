@@ -8,14 +8,9 @@ var parseData = require('./parse_data.js');
 
 app.use(logger('dev'));
 app.use(express.static('./public'));
-// app.set('port', (process.env.PORT || 3000));
-// var server = app.listen('port', function){
-// var host = server.address().address;
-// var port = server.address().port;
-// console.log('pokemon app is running.', 'host: ' + host, 'port: ' + port);
-// });
+app.set('port', (process.env.PORT || 3000));
 
-var server = app.listen(3000, function(){
+var server = app.listen(app.get('port'), function(){
   var host = server.address().address;
   var port = server.address().port;
   console.log('pokemon app is running.', 'host: ' + host, 'port: ' + port);
@@ -35,8 +30,8 @@ app.get('/pokemons/searchByName', function(req, res){
   var name = req.query.name;
   // res.send(name);
   // res.send(req.query);
-  var resultArray = parseData.searchByName(pokemons, name);
-  res.send(resultArray);
+  var result = parseData.searchByName(pokemons, name);
+  res.send(result);
 });
 
 app.get('/pokemons/searchByType', function(req, res){
