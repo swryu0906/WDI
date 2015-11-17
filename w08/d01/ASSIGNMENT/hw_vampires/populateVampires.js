@@ -1,4 +1,4 @@
-{
+module.exports = [{
   name: 'Count Chocula',
   hair_color: 'brown',
   eye_color: 'brown',
@@ -134,3 +134,4 @@
   gender: 'm',
   title: 'Osiris of Sewer Rats'
 }
+]
