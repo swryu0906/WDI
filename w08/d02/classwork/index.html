@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <title></title>
+  </head>
+  <body>
+    <!-- <form id="myForm" action="/creating-new-thing" method="post">
+      <div class="">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="">
+      </div>
+
+      <div class="">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="">
+      </div>
+
+      <div class="">
+        <label for="msg">Message:</label>
+        <input type="text" id="msg" name="msg" value="">
+      </div>
+
+      <div class="">
+        <button type="submit" name="button">Submit</button>
+      </div>
+    </form> -->
+
+    <div class="container">
+      Container
+      <a href="#" class="other-link link">Click Me!</a>
+    </div>
+
+    <script>
+      // $("#myForm").on('submit', function(e){
+      //   e.preventDefault();
+      // });
+
+      $(".container").on('click', function(e){
+        console.log('the .container was clicked.');
+      });
+
+      $(".link").on('click', function(e){
+        // e.stopPropagation();
+        console.log('the link was clicked.');
+      });
+
+      $('.other-link').on('click', function(e){
+        e.stopImmediatePropagation();
+        console.log('the other-link was clicked.');
+      });
+
+      // $('.container').on('click', '.link', function(e){
+      //   // e.stopPropagation();
+      //   console.log('the link was clicked.');
+      // });
+    </script>
+  </body>
+</html>
