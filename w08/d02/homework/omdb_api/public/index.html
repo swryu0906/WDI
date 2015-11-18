@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+  </head>
+  <body>
+    <h1>OMDB API App</h1>
+
+    <!-- <button id="movie">Star Wars</button> -->
+
+    <div class="">
+      <form action="", class="" id="movie-search">
+        <label class="" for="">Movie Title</label>
+        <input type="text" class="title" name="title">
+        <input type="submit">
+      </form>
+
+    </div>
+
+    <div class="">
+      <button id="keep">Keep</button>
+    </div>
+
+    <div class="movie-info">
+
+
+    </div>
+
+    <template id="movie" type="text/x-handlebars-template">
+      <div class="movie">
+        <h1 class="title">{{ Title }}</h1>
+        <p class="director">{{ Director }}</p>
+        <p class="actors">{{ Actors }}</p>
+        <p class="released">{{ Released }}</p>
+        <p class="plot">{{ Plot }}</p>
+      </div>
+    </template>
+
+
+    <h1>Add customized movie data</h1>
+    <div class="">
+      <form action="/moives", class="" id="movie-create">
+        <label for="title">Title</label>
+        <input type="text" name="title"><br>
+        <label for="director">Director</label>
+        <input type="text" name="director"><br>
+        <label for="actors">Actors</label>
+        <input type="text" name="actors"><br>
+        <label for="released">Released</label>
+        <input type="text" name="released"><br>
+        <label for="plot">Plot</label>
+        <input type="text" name="plot"><br>
+        <input type="submit">
+      </form>
+    </div>
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>

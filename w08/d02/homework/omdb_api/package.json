@@ -1,0 +1,22 @@
+{
+  "name": "omdb_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sungwon Ryu",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cookie-parser": "^1.4.0",
+    "express": "^4.13.3",
+    "handlebars": "^4.0.4",
+    "kerberos": "0.0.17",
+    "mongodb": "^2.0.48",
+    "mongoose": "^4.2.6",
+    "morgan": "^1.6.1",
+    "request": "^2.65.0"
+  }
+}
