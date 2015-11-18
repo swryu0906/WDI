@@ -2,7 +2,7 @@
 
 # Working with the OMDB API
 
-We're going to practice making AJAX calls to an API, saving data to a Mongo database via Mongoose, password encryption, and client-side templating.
+We're going to practice making AJAX calls to an API, saving data to a Mongo database via Mongoose, password encryption, and client-side templating. Do as much as you can, but healthy living is most important.
 
 Step 0.
 - Create a new Express App.
