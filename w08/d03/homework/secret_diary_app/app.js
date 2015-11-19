@@ -19,7 +19,7 @@ db.once('open', (callback) => {
 });
 
 
-const secret = 'qwerty';
+const secret = 'IlikeGA!!!!';
 
 let app = express();
 
@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // routes
-let home        = require('./controllers/index');
+let home        = require('./controllers/home');
 let login       = require('./controllers/login');
 let users       = require('./controllers/users');
 
@@ -38,8 +38,9 @@ app.use('/', home);
 app.use('/login', login);
 app.use('/users', users);
 
+var port = process.env.PORT || 3000;
 
-let server = app.listen(3000, () => {
+let server = app.listen(port, () => {
   let host = server.address().address;
   let port = server.address().port;
   console.log('secret diary app is running', 'host: ' + host, 'port: ' + port);

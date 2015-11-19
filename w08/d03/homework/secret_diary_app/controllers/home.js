@@ -6,7 +6,7 @@ let router    = express.Router();
 
 router.route('/')
   .get((req, res) => {
-    res.send('Hi, this is index');
+    res.send('Hi, this is home');
   });
 
 module.exports = router;
