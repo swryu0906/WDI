@@ -1,9 +1,15 @@
 'use strict';
 
-let express   = require('express');
-let router    = express.Router();
-let User      = require('../models/user.js')
+let express     = require('express');
+let path        = require('path');
+let bodyParser  = require('body-parser');
+let jwt         = require('jsonwebtoken');
+let expressjJWT = require('express-jwt');
+let bcrypt      = require('bcrypt');
 
+let router      = express.Router();
+let User        = require('../models/user')
+let key         = require('../secret_key')
 
 router.route('/')
   .get((req, res) => {
@@ -26,9 +32,39 @@ router.route('/')
     });
   });
 
+router.route('/login')
+  .get((req, res) => {
+    User.findOne({ email: req.body.email }, (err, user) => {
+      if(err) throw err;
+
+      if(!user){
+        res.json({
+          success: false,
+          message: 'User authentication has failed. User not found.'
+        });
+      }
+      else if(user.password != req.body.password){
+        res.json({
+          success: false,
+          message: 'User authentication has failed. Wrong password.'
+        });
+      }
+      else {
+        let token = jwt.sign(user, key.secret);
+        res.json({
+          success: true,
+          message: 'User authentication has succeeded.',
+          token: token
+        });
+      }
+    })
+  });
+
 router.route('/:id')
   .get((req, res) => {
-    res.send('/users/:id');
+    User.find({ id: req.body.id }, (err, user) => {
+
+    });
   });
 
 module.exports = router;
