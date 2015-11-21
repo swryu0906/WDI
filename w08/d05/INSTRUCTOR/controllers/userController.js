@@ -14,7 +14,7 @@ function create(req, res){
     if(err){
       return res.status(401).send({message: err.errmsg});
     } else {
-      return res.status(200).send({message: "user created"});
+      return res.status(200).send(user);
     }
   });
 }
@@ -27,15 +27,32 @@ function retrieve(req, res){
 }
 
 function update(req, res){
+
+  var userParams = req.body.user;
+
   User.findOne({ email: userParams.email }, function(err, user) {
-    user.update({ email: userParams.email }, { email: userParams.newEmail }, function(err, user){
-      //finally
-      res.send('{"record" : "updated"}');
-    });
+    user.update(
+      { email: userParams.email },
+      { email: userParams.newEmail, name: userParams.newName },
+      function(err, user){
+        //finally
+        res.send(user);
+      });
   });
 }
 
 function destroy(req, res){
+
+  var userParams = req.body.user;
+  User.findOne({ email : userParams.email}, function (err, user) {
+    if (err) {
+        return;
+    }
+    user.remove(function (err) {
+        // if no error, your model is removed
+        res.send({"record" : "deleted"});
+    });
+  });
 
 }
 

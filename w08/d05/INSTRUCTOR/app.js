@@ -5,12 +5,12 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
-const userRoutes = require('./routes/userRoutes');
+const userRoutes = require('./routes/userRoutes'); //the routes!
 
 
 app.use(logger('dev')); // gives us more info of our requests
-app.use(bodyParser.json()); //needs to come before routes and be json!
-app.use('/', userRoutes); //all our user routes
+app.use(bodyParser.json()); // needs to come before routes and be json!
+app.use('/', userRoutes); // register our routes with express!
 
 /*  the path you provide to express.static is relative to the directory
 where you launch your node process.
