@@ -1,7 +1,7 @@
 'use strict'; //ES6 Woo hoo!
 const path = require('path'); // Using const because this does not change!
 const logger = require('morgan');
-let bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
