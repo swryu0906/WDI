@@ -12,11 +12,6 @@ app.use(logger('dev')); // gives us more info of our requests
 app.use(bodyParser.json()); //needs to come before routes and be json!
 app.use('/', userRoutes); //all our user routes
 
-app.post('/hey', (req, res) => {
-  console.log("req body", req.body);
-  res.send(req.body);
-});
-
 /*  the path you provide to express.static is relative to the directory
 where you launch your node process.
 *
