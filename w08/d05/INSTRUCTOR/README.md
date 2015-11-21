@@ -2,6 +2,9 @@
 play with these routes. you'll notice sometimes i use function expressions
 explanation coming soon!
 
+***BY THE WAY ARROW FUNCTIONS MESSUP MONGOOSE WATCH OUT*** 
+
+
 # curl commands
 
 signup
