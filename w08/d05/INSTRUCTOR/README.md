@@ -11,7 +11,7 @@ signup
 
     curl -i -H "Content-Type: application/json" -d '{ "user" :{ "name" : "Enya", "email" : "enya@enya.com", "password" : "password" }}' http://localhost:3000/user/signup
 
-signin / authenticate user
+signin / authenticate user (get token)
 
     curl -i -H "Content-Type: application/json" -d '{ "user" :{ "email" : "drake@drake.com", "password" : "password" }}' http://localhost:3000/user/auth
 
