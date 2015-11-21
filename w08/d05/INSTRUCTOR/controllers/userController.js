@@ -27,10 +27,10 @@ function retrieve(req, res){
 }
 
 function update(req, res){
-  res.send("find by id");
   User.findOne({ email: userParams.email }, function(err, user) {
     user.update({ email: userParams.email }, { email: userParams.newEmail }, function(err, user){
       //finally
+      res.send('{"record" : "updated"}');
     });
   });
 }

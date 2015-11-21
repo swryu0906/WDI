@@ -5,7 +5,7 @@ let bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
-const userRoutes = require('./routes/user');
+const userRoutes = require('./routes/userRoutes');
 
 
 app.use(logger('dev')); // gives us more info of our requests
