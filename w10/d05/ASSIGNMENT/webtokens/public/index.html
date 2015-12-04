@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
+  </head>
+  <body>
+
+    <form id="login" action='/api/authenticate' method='post'>
+      <h3>Login</h3>
+      <label>Name</label>
+      <input type='text' name='name'id='name'>
+      <label>Password</label>
+      <input type='password' name='password' id='password'>
+      <button type='submit'>Login</button>
+    </form>
+    <br>
+    <button id='users-list'>clickme</button>
+    <div id="users">
+      <ul>
+        <li>
+
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
