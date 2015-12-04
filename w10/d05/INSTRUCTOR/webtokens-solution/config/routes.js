@@ -41,7 +41,8 @@ routes.post('/authenticate', function(req, res){
         res.json({success: false, message: 'login failed'})
       } else{
         //this is where we initiate a token and add it to what we send back to client
-        var token =jwt.sign(user, secret, {expiresIn: 1444000});
+        var token = jwt.sign(user, secret, { expiresIn: 144400 });
+
         res.json({
           success: true,
           message: 'You are authed',
@@ -57,29 +58,37 @@ routes.post('/authenticate', function(req, res){
   );
 });
 
-// route middleware to verify token above protected routes.  Order is important.
-routes.use(function(req, res, next){
 
+// route middleware to verify token above protected routes.  Order is important.
+// route middleware to verify a token
+routes.use(function(req, res, next) {
+
+  // check header or url parameters or post parameters for token
   var token = req.body.token || req.query.token || req.headers['x-access'];
 
-  //decode token
-  if(token) {
+  // decode token
+  if (token) {
 
-    jwt.verify(token, secret, function(err, decoded){
-      if(err) {
-        return res.json({success: false, message: "failed to authenticate token"});
+    // verifies secret and checks exp
+    jwt.verify(token, secret, function(err, decoded) {
+      if (err) {
+        return res.json({ success: false, message: 'Failed to authenticate token.' });
       } else {
-        // we good?
+        // if everything is good, save to request for use in other routes
         req.decoded = decoded;
         next();
       }
-
     });
-  } else{
+
+  } else {
+
+    // if there is no token
+    // return an error
     return res.status(403).send({
-      success: false,
-      message: "No token dude!"
-    })
+        success: false,
+        message: 'No token provided, dude.'
+    });
+
   }
 });
 
@@ -96,5 +105,8 @@ routes.get('/users', function(req, res){
 
 });
 
+routes.get('/me', function(req, res){
+ res.send(req.decoded);
+});
 
 module.exports = routes;
