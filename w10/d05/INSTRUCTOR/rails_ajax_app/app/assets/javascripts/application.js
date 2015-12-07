@@ -17,8 +17,18 @@
 
 $(function() {
 
-	$('#button').click(function() {
-		console.log("worked");
-	});
+    $('#button').click(function() {
+
+        $.ajax({
+            type: 'DELETE',
+            url: '/notes/1',
+            success: function(theSavedNote) {
+                console.log(theSavedNote);
+            }
+        });
+
+
+
+    });
 
 });

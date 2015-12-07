@@ -6,7 +6,40 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
   </head>
   <body>
+    <script>
 
+      $(function(){
+         var token;
+         $('#login').on('click', function(e){
+           e.preventDefault();
+           $.post("http://localhost:8000/api/authenticate", {name: $('#name').val(), password: $('#password').val()},
+         function(data){
+           if(data.token){
+             $('#login').hide();
+             alert("login successful " + data.token);
+             token = data.token;
+             $.ajaxSetup({
+               headers: {'x-access': token}
+             });
+           }
+         })
+         });
+         $('#users-list').on('click', function(e){
+           e.preventDefault();
+
+           $.ajax({
+            //  data: {token: token},
+             url: 'http://localhost:8000/api/users',
+             type: 'GET',
+             success: function(data){
+               for(var i in data){
+                 $('#users').append('<li>' +data[i] +'</li>');
+               }
+             }
+           });
+        });
+      });
+    </script>
     <form id="login" action='/api/authenticate' method='post'>
       <h3>Login</h3>
       <label>Name</label>
@@ -15,7 +48,6 @@
       <input type='password' name='password' id='password'>
       <button type='submit'>Login</button>
     </form>
-    <br>
     <button id='users-list'>clickme</button>
     <div id="users">
       <ul>
