@@ -1,0 +1,15 @@
+<h1>Signup!</h1>
+
+<% if @user.errors %>
+  <% @user.errors.each do |err, msg| %>
+    <p><%= "#{err}: #{msg}" %></p>
+  <% end %>
+<% end %>
+
+<%= form_for :user, url: "/users" do |f| %>
+  Name:  <%= f.text_field :name %>
+  Email: <%= f.text_field :email %>
+  Password: <%= f.password_field :password %>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+  <%= f.submit "Signup" %>
+  <% end %>

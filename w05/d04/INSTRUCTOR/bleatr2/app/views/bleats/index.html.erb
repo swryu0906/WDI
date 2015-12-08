@@ -1,0 +1,8 @@
+<ul>
+<% @bleats.each do |bleat| %>
+  <li>
+    <%= "Author: #{bleat.author}, Body: #{bleat.body}"  %>
+  </li>
+    <%= link_to "see full bleat", "bleats/#{bleat.id}" %>
+  <% end %>
+</ul>
