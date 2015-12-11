@@ -1,0 +1,129 @@
+
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  background-color: #FF5252;
+  color: #333;
+}
+
+#content-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: auto;
+  padding: 10px 10px 0 10px;
+  background-color: #FF5252;
+  box-shadow: -6px 0px 10px 1px #646464;
+
+  -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+
+#content-wrapper.open {
+  left: 150px
+}
+
+article {
+  position: relative;
+  display: inline-block;
+  margin: 5% 1% 2%;
+  padding: 1.8%;
+  width: 27%;
+  min-height: 60%;
+  background-color: white;
+  border-radius: 5px;
+}
+
+article:first-of-type{
+  margin-left: 0;
+}
+
+#hamburger-button {
+  display: inline-block;
+  vertical-align: top;
+  height: 15px;
+  width: 20px;
+}
+
+#hamburger-button:hover {
+  cursor: pointer;
+}
+
+#hamburger-button > span {
+  margin-bottom: 3px;
+  height: 3px;
+  width: 20px;
+  background-color: white;
+  opacity: 0.5;
+  display: block;
+
+  -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+
+#hamburger-button.open span:nth-child(1) {
+  -webkit-transform: translateY(6px) rotate(45deg);
+     -moz-transform: translateY(6px) rotate(45deg);
+      -ms-transform: translateY(6px) rotate(45deg);
+       -o-transform: translateY(6px) rotate(45deg);
+          transform: translateY(6px) rotate(45deg);
+}
+
+#hamburger-button.open span:nth-child(2) {
+  -webkit-transform: rotateY(90deg);
+     -moz-transform: rotateY(90deg);
+      -ms-transform: rotateY(90deg);
+       -o-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+}
+
+#hamburger-button.open span:nth-child(3) {
+  -webkit-transform: translateY(-6px) rotate(-45deg);
+     -moz-transform: translateY(-6px) rotate(-45deg);
+      -ms-transform: translateY(-6px) rotate(-45deg);
+       -o-transform: translateY(-6px) rotate(-45deg);
+          transform: translateY(-6px) rotate(-45deg);
+}
+
+#menu-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  background: gray;
+}
+
+ul#menu {
+  list-style-type: none;
+  padding: 0 30px 0 0;
+}
+
+ul#menu li {
+  border-bottom: 1px solid darkgray;
+}
+
+ul#menu li.selected {
+  background-color: rgb(171, 171, 171);
+}
+
+ul#menu > li > a {
+  display: block;
+  padding: 10px 60px 10px 10px;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+ul#menu > li > a:link, a:visited {
+  color: white;
+}
+
+ul#menu > li > a:hover {
+  color: #333;
+}
