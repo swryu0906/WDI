@@ -1,0 +1,60 @@
+
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  background-color: #FF5252;
+  color: #333;
+}
+
+#content-wrapper {
+  /* give the wrapper a position of absolute and set its bottom, top, right and left properties to 0. add padding, background-color and box-shadow (use a box-shadow generator to create a box-shadow on only the left side) */
+}
+
+#content-wrapper.open {
+  /* set the left property of the content to move it to the side this creates a space to show the menu when the .open class is added */
+}
+
+article {
+  /* give your articles a position of relative and display of inline-block. set margin, padding, width and min-height as percentages add background color and border-radius */
+}
+
+#hamburger-button {
+  /* give your hamburger button a disply of inline-block, vertical-align property of top set height to 15px and width to 20px */
+
+}
+
+#hamburger-button:hover {
+  /* change the cursor to pointer */
+  
+}
+
+#hamburger-button > span {
+  /* set the spans inside your hamburger button to have a display of block height and margin-bottom of 3, width of 20 */
+}
+
+#menu-wrapper {
+  /* set your menu to position fixed, top bottom and left to zero give it a width of auto*/
+}
+
+ul#menu {
+  /* make the list-style-type none and add padding */
+}
+
+ul#menu li {
+  /* give your li's a bottom border */
+}
+
+ul#menu li.selected {
+  /* change the color on a selected li */
+}
+
+ul#menu > li > a {
+  /* give your links a display of block and set padding */
+}
+
+ul#menu > li > a:link, a:visited {
+  /* set link color */
+}
+
+ul#menu > li > a:hover {
+  /* set link hover color */
+}
