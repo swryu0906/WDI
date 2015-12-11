@@ -4,7 +4,7 @@ body {
   background-color: #FF5252;
   color: #333;
 }
-
+/*We set the content wrapper to have the same positioning as the menu wrapper.  Since the content wrapper comes after the menu-wrapper in the HTML then it will effectively squeeze the menu-wrapper out of visibility*/
 #content-wrapper {
   position: absolute;
   top: 0;
@@ -21,7 +21,7 @@ body {
        -o-transition: all 0.5s ease;
           transition: all 0.5s ease;
 }
-
+/* upon clicking the hamburger button we shift the content-wrapper over to the right, which allows the menu-wrapper to be visible*/
 #content-wrapper.open {
   left: 150px
 }
@@ -66,7 +66,7 @@ article:first-of-type{
        -o-transition: all 0.5s ease;
           transition: all 0.5s ease;
 }
-
+/*half of our resulting 'X'*/
 #hamburger-button.open span:nth-child(1) {
   -webkit-transform: translateY(6px) rotate(45deg);
      -moz-transform: translateY(6px) rotate(45deg);
@@ -74,7 +74,7 @@ article:first-of-type{
        -o-transform: translateY(6px) rotate(45deg);
           transform: translateY(6px) rotate(45deg);
 }
-
+/*rotateY rotates this span 90 degrees away from us effectively making it invisible, much like an ultra thin person turning sideways */
 #hamburger-button.open span:nth-child(2) {
   -webkit-transform: rotateY(90deg);
      -moz-transform: rotateY(90deg);
@@ -82,7 +82,7 @@ article:first-of-type{
        -o-transform: rotateY(90deg);
           transform: rotateY(90deg);
 }
-
+/*Other half of our resulting 'X'*/
 #hamburger-button.open span:nth-child(3) {
   -webkit-transform: translateY(-6px) rotate(-45deg);
      -moz-transform: translateY(-6px) rotate(-45deg);
@@ -90,7 +90,7 @@ article:first-of-type{
        -o-transform: translateY(-6px) rotate(-45deg);
           transform: translateY(-6px) rotate(-45deg);
 }
-
+/*having top and bottom values set to 0 trick the menu-wrapper into displaying height: 100% */
 #menu-wrapper {
   position: fixed;
   top: 0;
